@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/neon</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">Lumia@540</property>
+
+
+        <!-- Automatically update the database schema -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Enable second-level cache -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+
+        <!-- Specify the JCache region factory class -->
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.JCacheRegionFactory</property>
+
+        <!-- Specify the JCache provider -->
+        <property name="hibernate.jakarta.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+
+        <!-- Optional: Specify the Ehcache configuration file -->
+        <property name="hibernate.cache.jakarta.cache.uri">ehcache.xml</property>
+
+        <property name="show_sql">true</property>
+
+
+
+    </session-factory>
+</hibernate-configuration>
